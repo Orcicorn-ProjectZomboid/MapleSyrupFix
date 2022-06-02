@@ -1,0 +1,51 @@
+/*
+	Here we're going to overwrite the Maple Syrup item in-game.
+	This is NOT A RECOMMENDED PROCESS as it is always better to tweak just portions
+	of an item rather than overwrite it.  However, in this game ItemTweaker consistently
+	fails to apply the FoodType value and it's just easier to overwrite it.  Eventually
+	if the dev's change the pancakes it'll break this mod.
+
+	There are two fundamental changes made to MapleSyrup here.
+	1:	Spice = false
+		By default "Spice = true" but this causes 2 issues for us.
+		A:	The EvolvedRecipe for Pancakes and Waffles does not allow spice to be added until another item is added.
+			We can get around this by setting "CanAddSpicesEmpty:true," in both the evolved recipes if we wish
+		B:	Spice adds very little nutritional value AND it doesn't rename the item either.  By setting Spice = False
+			we can reclassify Syrup as a condiment and make actual "Maple Syrup Pancakes" and "Maple Syrup Waffles"
+	2:	FoodType = NoExplicit
+		This setting allows the game to understand what type of food this item is when it is added to a recipe.
+		By default this value does not exist because it is a spice. Once we remove the spice attribute we seem to
+		have to tell the game what type of food it is.  I'm using NoExplicit so that it can still be added to pancakes
+		and waffles while not showing up in the fruits menu, etc. It is now treated as a condiment
+
+	With these 2 changes made, Syrup is now handled as a condiment and able to be added to Pancakes and Waffles any time 
+	as well as rename them to "Maple Syrup (item)".  The only idiocy here is that pancakes without syrup give you -10 Unhappy.
+	If you add syrup it drops to -5. This seems to be an issue with how evolved recipes are generated and out of my control.
+	Even adding Strawberries or other fruits causes the unhappiness to go away. I haven't been able to figure out how to 
+	override that without completely reworking the evolved recipe logic as a whole.  Which far exceeds the effort I'm
+	willing to put into a simple little mod to make maple syrup pancakes
+*/
+
+module Base
+{
+    item MapleSyrup {
+		DisplayName = Maple Syrup,
+		DisplayCategory = Food,
+		Type = Food,
+		Weight = 0.2,
+		Packaged = TRUE,
+		Icon = MapleSyrup,
+		CantBeFrozen = TRUE,
+		EvolvedRecipe = Pancakes:5;Waffles:5,
+		HungerChange = -45,
+		UnhappyChange = -20,
+		ThirstChange = -10,
+		Calories = 1100,
+		Carbohydrates = 270,
+		Lipids = 0,
+		Proteins = 0,
+		WorldStaticModel = MapleSyrup_Ground,
+        FoodType = NoExplicit,
+		Spice = false,
+	}
+}

@@ -1,0 +1,22 @@
+version=1
+id=2815951893
+title=Maple Syrup Fix
+description=Overwrites Maple Syrup to be recognized as a condiment so that it can be added to Pancakes and Waffles to produce "Maple Syrup Pancakes" and "Maple Syrup Waffles".  
+description=
+description=In vanilla Maple Syrup is treated as a spice and pancakes/waffles are programmed to not accept spices without first having fruits added to them.  it's a strange decision on the developers behalf so I made this change.  Special shout out to "[url=https://steamcommunity.com/profiles/76561198388769267]BeatlJoe[/url]" for pointing out this inconsistency and inspiring this mod.
+description=
+description=[h1]FYI[/h1]
+description=When adding items to evolved recipes stats get mixed into each other.  Maple Syrup adds Happiness but for some reason if you add more than 1 instance of syrup happiness goes down to zero.  It's just something about how the engine handles these recipes and is out of my control.  
+description=
+description=For lore purposes we can just assume at this point you've drowned your pancakes/waffles and though they're edible, they're just not optimal anymore.
+description=
+description=[h1]Source Code[/h1]
+description=Maple Syrup Fix is Open-Source and published on [url=https://github.com/Orcicorn-ProjectZomboid/MapleSyrupFix]Github[/url].
+description=Repackage, redistribute, recode, whatever, I don't care, do as you please.
+description=
+description=[h1]Like what I'm doing?[/h1]
+description=[img]https://raw.githubusercontent.com/Orcicorn-ProjectZomboid/.github/master/images/like_favorite.gif[/img] [url=https://ko-fi.com/orcicorn][img]https://raw.githubusercontent.com/Orcicorn-ProjectZomboid/.github/master/images/kofi.png[/img][/url]
+Workshop ID: 2815951893
+Mod ID: MapleSyrupFix
+tags=Build 41;Food
+visibility=Public
